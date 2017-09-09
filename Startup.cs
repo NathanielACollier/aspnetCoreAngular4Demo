@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 namespace aspnetCoreAngular4Demo{
         public class Startup
@@ -21,7 +22,8 @@ namespace aspnetCoreAngular4Demo{
             IHostingEnvironment env)
         {
             app.UseDeveloperExceptionPage();
-            app.UseMvcWithDefaultRoute();
+            // the order of all this stuff matters so call it in a very specific order
+            app.UseDefaultFiles(); // index.html and others
 
             // static files documented really well here: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files
             app.UseStaticFiles();
@@ -32,6 +34,9 @@ namespace aspnetCoreAngular4Demo{
                     System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "node_modules")),
                 RequestPath = new PathString("/node_modules")
             });
+
+            
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
