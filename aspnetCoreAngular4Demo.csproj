@@ -11,4 +11,12 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
   </ItemGroup>
 
+  <!--
+    This watcher.tools lets us do "dotnet watch"
+    see: https://docs.microsoft.com/en-us/aspnet/core/tutorials/dotnet-watch
+  -->
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
+  </ItemGroup> 
+
 </Project>
