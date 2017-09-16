@@ -30,7 +30,6 @@ msbuild.wrn
 .vs/
 
 node_modules/
-*.js
 
 # ignore the typescript output
 dist/
