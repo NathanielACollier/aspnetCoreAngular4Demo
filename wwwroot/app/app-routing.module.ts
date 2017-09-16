@@ -5,7 +5,7 @@ import { testRoutingComponent } from './components/testRouting';
 
 const appRoutes: Routes = [
     { path: 'testRouting', component: testRoutingComponent}
-    ,{path: '', redirectTo: '/testRouting', pathMatch: 'full'}
+    
 ];
 
 @NgModule({
